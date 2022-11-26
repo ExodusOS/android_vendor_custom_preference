@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.lineage.support.colorpicker;
+package com.exodus.support.colorpicker;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -31,7 +31,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 
-import com.lineage.support.R;
+import com.exodus.support.R;
 
 public class ColorPickerDialog extends AlertDialog implements ColorPickerView.OnColorChangedListener, View.OnClickListener {
 

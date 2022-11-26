@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lineage.support.preferences;
+package com.exodus.support.preferences;
 
 import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;

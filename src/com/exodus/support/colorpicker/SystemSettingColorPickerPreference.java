@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2020 crDroid Android Project
  * Copyright (C) 2022 Altair ROM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,24 +15,28 @@
  * limitations under the License.
  */
 
-package com.lineage.support.preferences;
+package com.exodus.support.colorpicker;
 
 import android.content.Context;
+import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 
-public class SystemSettingSeekBarPreference extends CustomSeekBarPreference {
+import com.exodus.support.preferences.SystemSettingsStore;
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
+public class SystemSettingColorPickerPreference extends ColorPickerPreference {
+
+    public SystemSettingColorPickerPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context, AttributeSet attrs) {
+    public SystemSettingColorPickerPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }
 
-    public SystemSettingSeekBarPreference(Context context) {
+    public SystemSettingColorPickerPreference(Context context) {
         super(context, null);
         setPreferenceDataStore(new SystemSettingsStore(context.getContentResolver()));
     }

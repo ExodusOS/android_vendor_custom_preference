@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.lineage.support.colorpicker;
+package com.exodus.support.colorpicker;
 
 import android.content.Context;
 import android.graphics.Canvas;

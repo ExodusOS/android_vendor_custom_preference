@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The CyanogenMod project
+ * Copyright (C) 2014 The CyanogenMod project
  * Copyright (C) 2017 AICP
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.lineage.support.preferences;
+package com.exodus.support.preferences;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -24,33 +24,33 @@ import android.util.AttributeSet;
 
 import lineageos.preference.SelfRemovingSwitchPreference;
 
-public class GlobalSettingSwitchPreference extends SelfRemovingSwitchPreference {
+public class SecureSettingSwitchPreference extends SelfRemovingSwitchPreference {
 
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
+    public SecureSettingSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public GlobalSettingSwitchPreference(Context context, AttributeSet attrs) {
+    public SecureSettingSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GlobalSettingSwitchPreference(Context context) {
+    public SecureSettingSwitchPreference(Context context) {
         super(context);
     }
 
     @Override
     protected boolean isPersisted() {
-        return Settings.Global.getString(getContext().getContentResolver(), getKey()) != null;
+        return Settings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
     }
 
     @Override
     protected void putBoolean(String key, boolean value) {
-        Settings.Global.putInt(getContext().getContentResolver(), key, value ? 1 : 0);
+        Settings.Secure.putIntForUser(getContext().getContentResolver(), key, value ? 1 : 0, UserHandle.USER_CURRENT);
     }
 
     @Override
     protected boolean getBoolean(String key, boolean defaultValue) {
-        return Settings.Global.getInt(getContext().getContentResolver(),
-                key, defaultValue ? 1 : 0) != 0;
+        return Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                key, defaultValue ? 1 : 0, UserHandle.USER_CURRENT) != 0;
     }
 }

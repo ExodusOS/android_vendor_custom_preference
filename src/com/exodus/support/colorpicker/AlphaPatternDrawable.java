@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.lineage.support.colorpicker;
+package com.exodus.support.colorpicker;
 
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
